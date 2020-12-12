@@ -1,0 +1,46 @@
+h4 {
+	padding-top: 30px;
+	color: black;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+}
+
+form {
+	padding-top: 20px;
+}
+
+.col-form-label {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	color: black !important;
+}
+
+.form-control {
+	height: 30px !important;
+	font-size: 14px !important;
+}
+
+.form-check-label {
+	color: black;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+th, td {
+	color: black;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+
+.button-all {
+	text-align: center;
+}
+
+.btn-lg {
+	margin-bottom: 20px;
+}
+.modal-content{
+	width: 150%;
+}

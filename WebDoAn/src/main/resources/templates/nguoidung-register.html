@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/index.html}">
+<head>
+<meta charset="UTF-8" />
+<title>Nguoi dung</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/StyleRegisterNguoidung.css"/>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+	<section class="main__content" layout:fragment="content">
+		<div class="container">
+			<h4>Thêm mới người dùng</h4>
+			<hr>
+			<form th:action="@{/nguoidung/saveNguoiDung}" th:object="${NGUOIDUNG}"  id="myModals">
+				<input th:field="*{id}" type="hidden">
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Mã người dùng(*) </label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control" placeholder="Enter mã người dùng" name="manguoidung" th:field="*{manguoidung}">
+						<p class="alert alert-danger"></p>
+					</div>
+					
+					
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Tên người dùng(*)</label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control" placeholder="Enter tên người dùng" name="tennguoidung" th:field="*{tennguoidung}">
+						<p class="alert alert-danger"></p>
+					</div>
+					
+					
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Password(*)</label>
+					<div class="col-sm-7">
+						<input type="password" class="form-control" placeholder="Enter password" name="password" th:field="*{password}">
+						<p class="alert alert-danger"></p>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Email(*)</label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control" placeholder="Enter email" name="email" th:field="*{email}">
+						<p  class="alert alert-danger"></p>
+					</div>
+					
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Phone(*)</label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control" placeholder="Enter phone" name="phone" th:field="*{phone}">
+						<p class="alert alert-danger"></p>
+					</div>
+					
+				</div>
+				<div class="form-group row">
+						<label class="col-sm-3 col-form-label">Gender</label>
+						<div class="col-sm-7">
+
+								<!--value = 0 => Nam| 1 => Nu| 2 => LGBT -->
+									<div class="form-check form-check-inline">
+										<input type="radio" class="form-check-input" name="gender" th:field="*{gender}" checked="checked" value="0">								
+										<label class="form-check-label">Nam</label>
+									</div>
+									
+									<div class="form-check form-check-inline">
+										<input type="radio" class="form-check-input" name="gender" th:field="*{gender}" value="1">
+										<label class="form-check-label">Nữ</label>
+									</div>
+ 									
+ 									
+ 									<div class="form-check form-check-inline">
+										<input type="radio" class="form-check-input" name="gender" th:field="*{gender}" value="2">									
+										<label class="form-check-label">Không xác định</label>
+ 									</div>
+
+								</div>
+								
+				</div>
+			 	<div class="button-all">
+			 		<button type="submit" class="btn btn-primary btn-lg">THÊM</button>
+			 		<a class="btn btn-primary btn-lg" href="/nguoidung/list">LIST</a>
+			 	</div>
+			 	
+			</form>
+		</div>
+	</section>
+
+</body>
+</html>

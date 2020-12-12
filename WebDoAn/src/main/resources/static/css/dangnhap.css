@@ -1,0 +1,279 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Roboto !important;
+    font-size: 14px;
+}
+
+#body-login {
+    background-color: #00909C;
+}
+
+
+/* start css dang nhập */
+
+#body-flex-login {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-login {
+    display: flex;
+    width: 820px;
+    height: 610px;
+    background-color: white;
+}
+
+#container-login-left {
+    width: 380px;
+    height: 610px;
+    background-image: url("../img/full.jpg");
+    background-size: 100%;
+    background-size: 257%;
+    background-position: -224px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+#container-login-right {}
+
+.header-login {
+    margin-top: 32px;
+}
+
+#header-top-left {
+    text-align: center;
+    color: white;
+}
+
+#text-logo {
+    font-size: 48px;
+}
+
+#hint-text-logo {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#header-button-left {
+    margin-bottom: 64px;
+}
+
+#header-button-left span {
+    color: white;
+    margin-left: 8px;
+}
+
+#container-login-right {
+    padding: 0 24px;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+#header-top-right {
+    font-size: 20px;
+    color: #878787;
+}
+
+.actived {
+    color: red;
+}
+
+#container-social-login {
+    align-self: flex-end;
+    margin-bottom: 16px;
+}
+
+#container-center-login-right input[type=text] {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#container-center-login-right input[type=submit] {
+    margin-top: 24px;
+    color: white;
+    font-size: 14px;
+}
+
+.material-textinput {
+    height: 38px;
+    border: 0;
+    background-color: #d8d8d8;
+    width: 100%;
+}
+
+.material-primary-button {
+    height: 38px;
+    border: 0;
+    background-color: #00909C;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 #000;
+}
+
+.input-icon-email {
+    background: url(../img/ic_email.png) no-repeat scroll 7px 7px;
+    height: 38px;
+    border: 0;
+    background-color: #d8d8d8;
+    width: 88%;
+    padding-left: 42px;
+}
+
+.input-icon-password {
+    background: url(../img/ic_lock.png) no-repeat scroll 7px 7px;
+    height: 38px;
+    border: 0;
+    background-color: #d8d8d8;
+    width: 88%;
+    padding-left: 42px;
+}
+
+
+/* End css đăng nhập */
+
+
+/* css trang chủ */
+
+#header {
+    height: 750px;
+    background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url(../img/hoalanfull.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.none_nav {
+    background: none !important;
+    border: none !important;
+}
+
+.navbar-center {
+    margin-left: 25% !important;
+}
+
+.navbar-nav a {
+    font-size: 10px;
+    font-family: Roboto;
+    color: white !important;
+}
+
+.active>a {
+    color: #0167ff !important;
+    background-color: none !important;
+    font-weight: bold;
+}
+
+.evernt_header {
+    text-align: center;
+    margin-top: 216px;
+}
+
+.evernt_header>span {
+    color: white;
+}
+
+.evernt_header button {
+    color: white;
+    background-color: #39FFF1;
+    border: #39FFF1;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+}
+
+#info {
+    text-align: center;
+    margin-top: 48px;
+}
+
+#info>span {
+    margin-top: 16px;
+}
+
+#title-sanpham {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.sanpham {
+    padding-bottom: 16px;
+    margin-top: 30px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gia {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.sanpham img {
+    height: 250px;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 42px;
+    padding: 38px;
+    color: white;
+    background-color: black;
+    background: linear-gradient(rgba(26, 24, 24, 0.42), rgba(27, 26, 26, 0.42)), url(../img/background_footer.jpg) no-repeat center center;
+}
+
+#footer p {
+    text-align: center;
+}
+
+.title-footer {
+    font-size: 32px;
+}
+
+#footer-textarea {
+    border: 0;
+    background-color: #d8d8d8;
+    width: 100%;
+}
+
+
+/* . @media ( max-width :575px) {
+    .navbar-center {
+        margin-left: 0% !important;
+    }
+} */
+
+@media ( min-width :767px) and(max-width:767px) {
+    .navbar-center {
+        margin-left: 0% !important;
+    }
+}
+
+@media ( min-width :768px) and (max-width:991px) {
+    .navbar-center {
+        margin-left: 8% !important;
+    }
+}
+
+@media ( min-width :992px) and (max-width:1199px) {
+    .navbar-center {
+        margin-left: 8% !important;
+    }
+}
+
+
+/* End css trang chủ */

@@ -1,0 +1,232 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>From-Register</title>
+<script src="/ckeditor/ckeditor.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+	type="text/javascript">
+	
+</script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="bootstrap-multiselect.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="bootstrap-multiselect.css" type="text/css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="bootstrap-multiselect.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		Static header
+		<form th:action="${ACTION}" th:object=${PRODUCTSDTO} method="post"
+			enctype="multipart/form-data">
+			<div>
+				<h2>Manager Products |...</h2>
+			</div>
+			<!-- Nav tabs -->
+			<h2 style="text-align: center;">Register Products</h2>
+
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item"><a href="#home" class="nav-link active"
+					id="home-tab" data-toggle="tab" role="tab" aria-controls="home"
+					aria-selected="true">Thông Tin</a></li>
+
+				<li class="nav-item"><a href="#profile" id="profile-tab"
+					class="nav-link" data-toggle="tab" role="tab"
+					aria-controls="profile" aria-selected="false">Description</a></li>
+				<li class="nav-item"><a href="#contact" class="nav-link "
+					id="contact-tab" data-toggle="tab" role="tab"
+					aria-controls="contact" aria-selected="false">Images</a></li>
+				<li class="nav-item"><a href="#phanloai" class="nav-link "
+					id="contact-tab" data-toggle="tab" role="tab"
+					aria-controls="contact" aria-selected="false">Phân Loại</a></li>
+			</ul>
+			<!-- Tab panes -->
+
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active p-3" id="home" role="tabpanel"
+					aria-labelledby="home-tab">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<label>ID (*):</label> <input type="number" class="form-control"
+								name="id" th:field="*{id}" placeholDer="Enter ID">
+						</div>
+						<div class="form-group">
+							<label>NAME (*):</label> <input type="text" class="form-control"
+								name="name" th:field="*{name}" value="" placeholDer="Enter NAME">
+						</div>
+
+						<div class="form-group">
+							<label>NGÀY NHẬP (*):</label> <input type="date"
+								class="form-control" name="productsdate"
+								th:field="*{productsdate}" placeholDer="Enter NGAYNHAP">
+						</div>
+						<div class="form-group">
+							<label>SỐ LƯỢNG (*):</label> <input type="number"
+								class="form-control" name="quantity" th:field="*{quantity}"
+								value="" placeholDer="Enter SOLUONG">
+						</div>
+						<div class="form-group">
+							<label>GIÁ BÁN (*):</label> <input type="number"
+								class="form-control" name="price" th:field="*{price}" value=""
+								placeholDer="Enter GIABAN">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="profile">
+					<p>
+						<label>Short Description: </label>
+						<textarea rows="5" name="description" id="description"
+							class="form-control" th:field="*{description}"
+							required="required"></textarea>
+
+					</p>
+					<p>
+						<label>Full Statuts: </label>
+						<textarea name="status" th:field="*{status}" id="status" rows="10"
+							class="form-control" required="required"></textarea>
+					</p>
+				</div>
+				<div class="tab-pane fade p-4" id="contact" role="tabpanel"
+					aria-labelledby="contact-tab">
+					
+					<div class="form-group">
+						<label for="photo">Images(*) :</label>
+						<!--<input type="file" class="form-control" id="photo" placeholder="Enter Image" th:field="*{photo}" name="photo">  -->
+						<input type="file" class="form-control" id="fileImage"
+							placeholder="Enter Image" name="fileImage"
+							accept="image/png, image/jpeg" />
+						<p>
+							<img id="thumbnail" alt="Logo Preview" style="width: 500px"/>
+						</p>
+					</div>
+
+				</div>
+				<div class="tab-pane fade p-4" id="phanloai" role="tabpanel"
+					aria-labelledby="contact-tab">
+					<div class="form-group">
+						<label>Tên Loại</label> <select
+							multipleonchange="validateSelectBox(this)" class="form-control"
+							th:field="*{categoryid}" name="categoryid">
+							<option value="">-- Chọn --</option>
+							<option th:each="catego:${CATEGORY}" th:value="${catego.id}"
+								th:text="${catego.name}"></option>
+						</select>
+						<h3>Danh sách bạn đã chọn ra</h3>
+						<div id="result">Bạn chưa chọn tên nào</div>
+					</div>
+					<div class="form-group">
+						<label>PHÂN LOẠI CHA</label> <select class="form-control"
+							name="categoryid" th:field="*{categoryid}">
+
+							<option value="">-- Chọn --</option>
+							<option th:each="catego:${CATEGORY}" th:value="${catego.id}"
+								th:text="${catego.classify}"></option>
+						</select>
+					</div>
+
+				</div>
+				<div class="form-group  text-center">
+					<button type="submit" class="btn btn-primary text-center">THÊM</button>
+					<button type="reset" class="btn btn-primary">HỦY</button>
+					<a href="/products/list" class="btn btn-primary">DANH SÁCH HIỂN
+						THỊ</a>
+				</div>
+			</div>
+
+		</form>
+
+		<footer>
+			<div class="card  text-center">
+				<div class="card-body">
+					<h5 class="card-title">ShopBanCay</h5>
+					<p class="card-text">Copy right @2020</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script type="text/javascript">
+		CKEDITOR.replace('description', {
+			uiColor : '#ec971f'
+		});
+		CKEDITOR.replace('status', {
+			uiColor : '#ec971f'
+		});
+	</script>
+
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous">
+		
+	</script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script language="javascript">
+		$(document).ready(function() {
+			$('#fileImage').change(function() {
+				showImageThumbnail(this);
+			});
+
+		});
+		function showImageThumbnail(fileInput) {
+			file = fileInput.files[0];
+			reader = new FileReader();
+
+			reader.onload = function(e) {
+				$('#thumbnail').attr('src', e.target.result);
+			};
+			reader.readAsDataURL(file);
+		}
+	</script>
+	<script language="javascript">
+		function validateSelectBox(obj) {
+			var options = obj.children;
+			var html = '';
+			for (var i = 1; i < options.length; i++) {
+				if (options[i].selected) {
+					html += '<li>' + options[i].text + '</li>';
+				}
+			}
+
+			document.getElementById('result').innerHTML = html;
+		}
+	</script>
+
+</body>
+
+</html>

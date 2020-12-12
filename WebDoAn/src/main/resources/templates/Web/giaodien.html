@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="/css/dangnhap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/animate.css">
+    <script src="/js/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</head>
+
+<body>
+    <div id="header" class="container-fluid">
+        <nav class="navbar navbar-default none_nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteLan</a>
+                </div>
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="active"><a href="#">TRANG CHỦ</a></li>
+                    <li><a href="#">SẢN PHẢM</a></li>
+                    <li><a href="#">DỊCH VỤ LIÊN HỆ</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="/dangnhap/">ĐĂNG NHẬP</a></li>
+                    <li><a href="#">ĐĂNG KÝ</a></li>
+                    <li>
+                        <a href=""><img src="/img/giohang.png" alt="giỏ hàng"></a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="evernt_header container wow animate__bounceIn">
+            <span>Ngày 28/11 - 1/12/2020</span><br>
+            <span style="font-size: 50px;">Mua 1 tặng 1</span><br>
+            <button>Xem Ngay</button>
+
+        </div>
+    </div>
+    <div id="info" class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 wow animate__fadeInLeft" data-wow-duration="1s">
+                <img class="icon" src="/img/icon_chatluong.png" alt="chất lượng"><br>
+                <span style="font-size: 32px; font-weight: 500;">CHẤT LƯỢNG</span><br>
+                <span>Chúng tôi cam kết sẽ mang đến cho các bạn chất lượng sản phẩm tốt nhất</span><br>
+            </div>
+            <div class="col-12 col-sm-4  col-md-4 wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="1s">
+                <img class="icon" src="/img/icon_conheo.png" alt="chất lượng"><br>
+                <span style="font-size: 32px; font-weight: 500;">TIẾT KIỆM CHI PHÍ</span><br>
+                <span>Cam kết giá rẻ nhất Việt Nam và tiết kiệm hơn 20%</span><br>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+                <img class="icon" src="/img/icon_giaohang.png" alt="chất lượng"><br>
+                <span style="font-size: 32px; font-weight: 500;">GIAO HÀNG</span><br>
+                <span>
+                    Cam kết giao hàng tận nơi trong ngày. Để mang sản phẩm đến cho khách hàng nhanh nhất </span><br>
+            </div>
+
+        </div>
+    </div>
+    <div id="title-sanpham">
+        <span id>SẢN PHẨM HOT</span>
+        <div class="row" style="margin-top: 42px;">
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn " data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="sanpham wow animate__zoomIn" data-wow-duration="2s">
+                    <img src="/img/kieu-vuong-hoa-vang-2(1).jpg" alt="hinh">
+                    <span>Lan</span><br>
+                    <span class="gia">150.000VND</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end sản phẩm -->
+    <div id="footer" class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 wow animate__tada" data-wow-duration="2s">
+                <p><span class="title-footer">THÔNG TIN SHOP LAN</span></p><br>
+                <span>SHOP LAN  là một thương hiệu về Lan Rừng, một trong những loại Lan Rừng đẹp nhất và luôn đảm bảo chất lượng vê sản phẩm cũng thời gian bảo quản</span>
+            </div>
+            <div class="col-md-4 wow animate__tada" data-wow-duration="2s">
+                <p><span class="title-footer">LIÊN HỆ</span></p><br>
+                <span>Số 10 Võ Văn Tần, Quận Thanh Khuê, Tp. Đà Nẵng</span><br>
+                <span>Email: <u>trantrongycntt@gmail.com</u> </span><br>
+                <span>0777531868</span>
+            </div>
+            <div class="col-md-4 wow animate__tada" data-wow-duration="2s">
+                <p> <span class="title-footer">GÓP Ý</span></p>
+                <form action=""  method="POST">
+                    <input class="material-textinput"  style="margin-bottom: 8px;color:black;" type="text" placeholder="Email" name="email" />
+                    <textarea name="noidung" style="color:black" placeholder="Nội Dung" cols="69" rows="4"></textarea>
+                    <button class="material-primary-button" style="margin-bottom: 8px;">ĐỒNG Ý</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Products</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="containers">	
+		<h2 style="text-align: center; color: blue">List Products</h2>
+		<a  href="/products/" class="btn btn-primary">Add</a> 
+		<input  type="button" class="btn btn-light" id="btn2" value="Bỏ chọn" /> 
+		<a  class="btn btn-danger" value="Xóa">Xóa</a>
+		<table class="table table-striped">
+			<thead class="color">
+				<tr class="bg-primary ">
+					<th><input type="checkbox" id="checkBoxAll" /></th>
+					<th>Image</th>
+					<th>Name</th>
+					<th>subclass</th>
+					<th>Father</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>DateAdded</th>
+					<!-- <th>Description</th>
+					<th>Status</th> -->
+					<th>Totally</th>
+					
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<div>&nbsp; &nbsp;</div>
+				<tr th:each="item :${listProducts} ">
+					<td><input type="checkbox" class="chkCheckBoxId" name="name"
+						value="*{item.name}" /></td>
+					<td width="100"><img alt=""
+						th:src="@{'/getimage/'+ ${item.image}}" width="80" height="70">
+					</td>
+					<td th:text="*{item.name}"></td>
+					<td th:text="*{item.category.name}"></td>
+					<td th:text="*{item.category.classify}"></td>				
+					<td th:text="*{item.quantity}"></td>
+					<td th:text="*{item.price}"></td>
+					<td th:text="*{item.productsdate}"></td>
+					<!-- <td style="max-width: 200px">
+						<div class="b" th:text="*{item.description}"
+							th:title="${item.description}"></div>
+					</td>
+					<td style="max-width: 200px">
+						<div class="b " th:text="*{item.status}" th:title="${item.status}"></div>
+					</td> -->
+					<td th:text="*{item.quantity * item.price}"></td>
+					<td>
+					<a class="btn btn-primary btn-sm"
+						th:href="@{'/products/edit/'+ ${item.id}}">Edit</a> 
+						<a class="btn btn-danger btn-sm" th:href="@{'/products/delete/'+ ${item.id}}">Del</a></td>
+				</tr>
+			</tbody>		
+		</table>
+		<hr>
+		<div>
+				<div th:if="${totalPages > 1}">
+					<div class="row col-sm-10">
+						<div class="col-sm-2">Total Rows: [[${totalItems}]]</div>
+						<div class="col-sm-2">Currently In:
+							[[${currentPage}]]/[[${totalPages}]]</div>
+						<div class="col-sm-1">
+							<span th:each="i: ${#numbers.sequence(1,totalPages)}"> <a
+								th:if="${currentPage != i }"
+								th:href="@{'/products/page/' + ${i}}">[[${i}]]</a> <span
+								th:unless="${currentPage != i}">[[${i}]]</span> &nbsp;&nbsp;
+							</span>
+						</div>
+						<div class="col-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/products/page/' + ${currentPage + 1}}">Next</a> <span
+								th:unless="${currentPage < totalPages}">Next</span> &nbsp;&nbsp;
+						</div>
+						<div class="col-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/products/page/' + ${totalPages}}">Last</a> <span
+								th:unless="${currentPage<totalPages}">Last</span> &nbsp;&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+	
+	</div>
+	
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script language="javascript">
+		//chức năng tích
+		$(document).ready(function(){
+			$('#checkBoxAll').click(function(){
+				if($(this).is(":checked"))
+					$('.chkCheckBoxId').prop('checked',true);
+				else
+					$('.chkCheckBoxId').prop('checked',false);
+			});
+			
+		});
+		// Chức năng bỏ chọn hết
+		document.getElementById("btn2").onclick = function() {
+			// Lấy danh sách checkbox
+			var checkboxes = document.getElementsByName('name');
+
+			// Lặp và thiết lập Uncheck
+			for (var i = 0; i < checkboxes.length; i++) {
+				checkboxes[i].checked = false;
+			}
+		};
+		//chức năng xóa
+		
+		
+	</script>
+</body>
+
+</html>
